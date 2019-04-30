@@ -1,0 +1,248 @@
+<section class="datve_header" [ngStyle]="{'width':step==2 ? '74%':'100%'}">
+  
+  <div class="header_content">
+    <div class="left  "> 
+        <ul>
+          <li [ngClass]="{active:step==1}" (click)="backtoStep1()">
+              <span>
+                01
+              </span>
+              <span>
+                CHỌN LOẠI VÉ
+              </span>
+          </li>
+          <li  [ngClass]="{active:step==2}">
+            <span>
+              02
+            </span>
+            <span>
+              CHỌN GHẾ & THANH TOÁN
+            </span>
+        </li>
+        <li  [ngClass]="{active:step==3}">
+          <span>
+            03
+          </span>
+          <span>
+            KẾT QUẢ ĐẶT VÉ 
+          </span>
+      </li>
+        </ul>
+    
+      
+    </div>
+    <div class="header_responsive">
+        <div class="back">
+            <img class="backMobile ng-scope" src="https://www.123phim.vn/app/assets/img/icons/cancel-arrow.png"  (click)="backtoStep1()" >
+        </div>
+        <div class="step">
+          <span class="step1 " *ngIf="step==1"  >01.Chọn loại vé</span>
+          <span class="step2  " *ngIf="step==2">02. CHỌN GHẾ & THANH TOÁN</span>
+          <span class="step3  " *ngIf="step==3">03.Kết quả</span>
+        </div>
+        <div class="dangnhap">
+          <a href="#"><i class="fa fa-user-circle mr-3"></i></a>
+        </div>
+    </div>
+    <div class="dangnhap right  ">
+      <a href="#"><i class="fa fa-user-circle mr-3"></i><span>Đăng Nhập</span></a>
+    </div>
+  </div>
+</section>
+<section class="datve_body row  ">
+  <div class="left" [ngStyle]="{'width': step==1 ? '26%':'6%'}">
+    <div class="overlay">
+
+    </div> 
+    <!-- [ngStyle]="{'display': step==1 ? 'block':'none'}" -->
+    <div class="back " *ngIf="step==1">
+        <img src="https://www.123phim.vn/app/assets/img/icons/prev_checkout.png" alt="">
+ 
+    </div>
+    <div class="titlefilm"  *ngIf="step==1">
+
+        <p class="info1 ng-binding"> Ngày mai</p>
+        <p class="info2 ng-binding">
+          <!-- ngIf: film_age >= 13 --><span class="ageType ng-binding ng-scope" ng-if="film_age >= 13">C16</span> Lật Mặt: Nhà Có Khách 
+        </p>
+        <p class="info3 ng-binding">90 phút - 123Phim 8.4 - IMDb 0 - 2D/Digital
+      </p></div>
+   </div> 
+   <div class="mid step1"*ngIf="step==1"  > 
+     <div class="ticketcheckout" >
+        <p class="info2 ng-binding">
+             <span class="ageType ng-binding ng-scope"  >C16</span> Lật Mặt: Nhà Có Khách 
+          </p>
+          <p class="info3 ng-binding">90 phút - 123Phim 8.4 - IMDb 0 - 2D/Digital
+            </p>
+        <div class="topContent row" style="justify-content: unset;">
+    
+            <div class="logocinema" style="">
+              <img class="logo" ng-src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png" src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png">
+            </div>
+            <div class="contentcinema">
+              <p class="address"><span class="pcinema ng-binding" style="color:#ff6600">Galaxy</span><span class="cinemaname ng-binding" style=""> - Nguyễn Du</span></p> 
+              <p class="hour ng-binding">Hôm nay - 08:45<!-- ngIf: room_name!='' --><span ng-if="room_name!=''" class="ng-binding ng-scope"> - RẠP 3</span><!-- end ngIf: room_name!='' --></p>
+            </div>
+      
+          </div>
+          <div class="ticket1 row">
+              <div class="col-4 col-md-4 danhcho">
+                Vé người lớn
+              </div>
+              <div class="col-4 col-md-4 gia">
+                85.000 đ
+              </div>
+              <div class="col-4 col-md-4 ">
+                <button class="btn">-</button>
+                <span class="number soluong" style="">1</span>
+                <button class="btn">+</button>
+              </div>
+          </div>
+          <div class="ticket2 row">
+              <div class="col-4 col-md-4 danhcho">
+                Vé ghế đôi
+              </div>
+              <div class="col-4 col-md-4 gia">
+                85.000 đ
+              </div>
+              <div class="col-4 col-md-4 ">
+                <button class="btn">-</button>
+                <span class="number soluong" style="">1</span>
+                <button class="btn">+</button>
+              </div>
+          </div>
+          <div class="detailticket">
+              <div class="chosenTicket row  " ng-if="step==1" style="">
+                  <div class="chosencontent" style="">
+                    <div class="totalcostfull">
+                      <div class="title">TỔNG TIỀN</div>	
+                      <div class="chosenpriceticket "  >85.000 đ</div>	
+                    </div>	
+                  </div>
+                  <div class="chosenbutton" >
+                      <button class="continue btn" (click)="chonghe()" >CHỌN GHẾ</button><!-- end ngIf: !loadingticket -->
+                  </div>
+                </div>
+                <div class="contact">
+                    <div class="note">Xin lưu ý, bạn không thể hủy hoặc thay đổi suất chiếu cho vé đã mua.</div>
+                    <div class="hot">
+                      <div class="hotline">
+                        <p class="hotlinetitle">HOTLINE</p>
+                        <p class="costcall">Phí cuộc gọi 1000VND/phút</p>
+                      </div>
+                      <div class="phone" style="">1900 545 436
+                      </div>
+                    </div>
+              
+                  </div>
+          </div>
+ 
+              <div class="continueMobile row">
+                  <div class="col-6 tongtien">
+                    85.000 VNĐ
+                  </div>
+                  <button class="col-6 continue" (click)="chonghe()">
+                    TIẾP TỤC
+                  </button>
+                </div>
+ 
+          
+          
+     </div>
+     
+   </div>
+   <div class="mid step2 " *ngIf="step==2"  > 
+   
+    <div class="chonghe"  *ngIf="step==2">
+     <div class="topContent row">
+   
+       <div class="row ml-3">
+         <div class="logocinema" style="">
+           <img class="logo" ng-src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png" src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png">
+         </div>
+         <div class="contentcinema">
+           <p class="address"><span class="pcinema ng-binding" style="color:#ff6600">Galaxy</span><span class="cinemaname ng-binding" style=""> - Nguyễn Du</span></p> 
+           <p class="hour ng-binding">Hôm nay - 08:45<!-- ngIf: room_name!='' --><span ng-if="room_name!=''" class="ng-binding ng-scope"> - RẠP 3</span><!-- end ngIf: room_name!='' --></p>
+         </div>
+       </div>
+       <div class="thoigiangiughe " >
+        <p>Thời gian giữ ghế</p>
+        <p>00:00</p>
+       </div>
+     </div>
+     <div class="img_manhinh">
+       <img src="https://123phim.vn/app/assets/img/icons/screen.png" alt="">
+     </div>
+     <div class="danhsachghe">
+       <app-danhsachghe></app-danhsachghe>
+     
+     </div>
+     <div class="trangthaighe">
+       <span class="mr-3">
+         <button class="ghetrong" disabled></button>Ghế trống
+       </span>
+       <span class="mr-3">
+         <button class="ghedangchon" disabled></button>Ghế đang chọn
+       </span>
+       <span class="mr-3" >
+         <button class="ghedachon" disabled></button>Ghế đã có người chọn
+       </span>
+       <span class="mr-3" >
+         <button class="gheVIp" disabled></button>Ghế VIP
+       </span>
+       <span   >
+         <button class="ghesofa" disabled></button>Ghế Sofa
+       </span>
+     </div>
+     <div class="rightcheckout_content">
+      <div class="total row ">
+        <p>170.000 đ</p>
+      </div>
+      <div class="phim">
+        <p>Upin & Ipin: Truyền Thuyết Thần Đao - Upin & Ipin: Keris Siamang Tunggal</p>
+        <p>Galaxy - Nguyễn Du</p>
+        <p>Hôm nay 27/04/2019 - 09:15 - RẠP 5</p>
+      </div>
+      <div class="ghe row">
+        <span>Ghế</span>
+        <span>170.000 đ</span>
+      </div>
+      <div class="email">
+          <input type="text" placeholder="E-Mail" >
+      </div>
+      <div class="phone">
+        <input type="text" placeholder="Phone" >
+      </div>
+    </div>
+    <button class="buyticket">
+       Đặt Vé
+    </button>
+    </div>
+  </div>
+</section>
+<section class="rightcheckout"   [ngStyle]="{'right': step==2 ? '0':'-26%'}">
+  <div class="rightcheckout_content">
+    <div class="total row ">
+      <p>170.000 đ</p>
+    </div>
+    <div class="phim">
+      <p>Upin & Ipin: Truyền Thuyết Thần Đao - Upin & Ipin: Keris Siamang Tunggal</p>
+      <p>Galaxy - Nguyễn Du</p>
+      <p>Hôm nay 27/04/2019 - 09:15 - RẠP 5</p>
+    </div>
+    <div class="ghe row">
+      <span>Ghế</span>
+      <span>170.000 đ</span>
+    </div>
+    <div class="email">
+        <input type="text" placeholder="E-Mail" >
+    </div>
+    <div class="phone">
+      <input type="text" placeholder="Phone" >
+    </div>
+  </div>
+  <button class="buyticket">
+     Đặt Vé
+  </button>
+</section> 

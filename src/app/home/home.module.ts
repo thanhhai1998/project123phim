@@ -16,7 +16,11 @@ import { QuangcaoComponent } from './layout-home/trang-chu/quangcao/quangcao.com
 import { ItemPhimComponent } from './layout-home/trang-chu/phim/item-phim/item-phim.component';
 import { LichchieuComponent } from './layout-home/trang-chi-tiet/lichchieu/lichchieu.component';
 import { ThongtinphimComponent } from './layout-home/trang-chi-tiet/thongtinphim/thongtinphim.component';
-
+import { TrangdatveComponent } from './layout-home/trang-chi-tiet/trangdatve/trangdatve.component';
+import { TrangchitietRoutingModule } from './layout-home/trang-chi-tiet/trangchitiet-routing.module';
+import { DanhsachgheComponent } from './layout-home/trang-chi-tiet/trangdatve/danhsachghe/danhsachghe.component';
+import { GheComponent } from './layout-home/trang-chi-tiet/trangdatve/ghe/ghe.component';
+import { MaterialModuleModule } from '../share/material/material.module';
 @NgModule({
   // tslint:disable-next-line: max-line-length
   declarations: [
@@ -34,10 +38,15 @@ import { ThongtinphimComponent } from './layout-home/trang-chi-tiet/thongtinphim
     QuangcaoComponent,
     ItemPhimComponent,
     LichchieuComponent,
-    ThongtinphimComponent],
+    ThongtinphimComponent,
+    TrangdatveComponent,
+    DanhsachgheComponent,
+    GheComponent,
+  ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    TrangchitietRoutingModule, MaterialModuleModule
   ],
   exports: [
     LayoutHomeComponent,
@@ -48,7 +57,16 @@ import { ThongtinphimComponent } from './layout-home/trang-chi-tiet/thongtinphim
     PhimComponent,
     SliderComponent,
     DangchieuComponent,
-    SapchieuComponent
+    SapchieuComponent,
+    CumrapComponent,
+    TintucComponent,
+    QuangcaoComponent,
+    ItemPhimComponent,
+    LichchieuComponent,
+    ThongtinphimComponent,
+    TrangdatveComponent,
+    DanhsachgheComponent,
+    GheComponent,
   ]
 })
 export class HomeModule { }

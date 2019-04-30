@@ -4,15 +4,17 @@ import { Routes, Router, RouterModule } from '@angular/router';
 import { LayoutHomeComponent } from './layout-home/layout-home.component';
 import { TrangChuComponent } from './layout-home/trang-chu/trang-chu.component';
 import { TrangChiTietComponent } from './layout-home/trang-chi-tiet/trang-chi-tiet.component';
+import { TrangdatveComponent } from './layout-home/trang-chi-tiet/trangdatve/trangdatve.component';
 
 
 
 const routes: Routes = [
   {
     path: '', component: LayoutHomeComponent, children: [
-      { path: '', component: TrangChuComponent },
+      { path: '', component: TrangChiTietComponent },
       { path: 'trangchu', component: TrangChuComponent },
       { path: 'trangchitiet', component: TrangChiTietComponent },
+      { path: 'trangdatve', component: TrangdatveComponent }
     ]
   }
 ];

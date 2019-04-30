@@ -1,0 +1,23 @@
+.dayghe{
+    align-items: center; 
+    margin: auto;
+    max-width: 350px;
+    .tenday{
+      height: 30px;
+      width: 30px;
+      font-size: 14px;
+      background: transparent;
+      margin-right: 25px;
+      font-weight: 600;
+    }
+    .A02,.A10, .B02,.B10, .C02,.C10,.D02,.D10, .E02,.E10, .F02,.F10, .G02,.G10, .H02,.H10{
+      margin-right: 35px;
+    }
+  
+  }
+  @media screen and (max-width:768px){
+    .dayghe{ 
+width: 321px; 
+padding-left: 5px;
+    }
+  }
