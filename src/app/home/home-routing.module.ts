@@ -10,13 +10,17 @@ import { TrangdatveComponent } from './layout-home/trang-chi-tiet/trangdatve/tra
 
 const routes: Routes = [
   {
+    
     path: '', component: LayoutHomeComponent, children: [
       { path: '', component: TrangChiTietComponent },
       { path: 'trangchu', component: TrangChuComponent },
-      { path: 'trangchitiet', component: TrangChiTietComponent },
-      { path: 'trangdatve', component: TrangdatveComponent }
+      { path: 'trangchitiet/:id', component: TrangChiTietComponent },
+    
     ]
-  }
+    
+  },
+  
+  { path: 'trangdatve/:malichchieu/:maphim', component: TrangdatveComponent }
 ];
 @NgModule({
   declarations: [],

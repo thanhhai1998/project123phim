@@ -17,10 +17,20 @@ import { ItemPhimComponent } from './layout-home/trang-chu/phim/item-phim/item-p
 import { LichchieuComponent } from './layout-home/trang-chi-tiet/lichchieu/lichchieu.component';
 import { ThongtinphimComponent } from './layout-home/trang-chi-tiet/thongtinphim/thongtinphim.component';
 import { TrangdatveComponent } from './layout-home/trang-chi-tiet/trangdatve/trangdatve.component';
-import { TrangchitietRoutingModule } from './layout-home/trang-chi-tiet/trangchitiet-routing.module';
-import { DanhsachgheComponent } from './layout-home/trang-chi-tiet/trangdatve/danhsachghe/danhsachghe.component';
 import { GheComponent } from './layout-home/trang-chi-tiet/trangdatve/ghe/ghe.component';
 import { MaterialModuleModule } from '../share/material/material.module';
+import { DangkydangnhapComponent } from './layout-home/dangkydangnhap/dangkydangnhap.component';
+import { DangkyComponent } from './layout-home/dangkydangnhap/dangky/dangky.component';
+import { DangnhapComponent } from './layout-home/dangkydangnhap/dangnhap/dangnhap.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { PipeModule } from '../pipe/pipe.module';
+
+import { NgxLoadingModule } from 'ngx-loading';
+
+import { NgxSpinnerModule } from 'ngx-spinner';
+ 
+ 
 @NgModule({
   // tslint:disable-next-line: max-line-length
   declarations: [
@@ -40,13 +50,15 @@ import { MaterialModuleModule } from '../share/material/material.module';
     LichchieuComponent,
     ThongtinphimComponent,
     TrangdatveComponent,
-    DanhsachgheComponent,
     GheComponent,
+    DangkydangnhapComponent,
+    DangkyComponent,
+    DangnhapComponent,
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
-    TrangchitietRoutingModule, MaterialModuleModule
+    HomeRoutingModule, MaterialModuleModule, FormsModule, PipeModule, NgxLoadingModule
+    , NgxSpinnerModule
   ],
   exports: [
     LayoutHomeComponent,
@@ -65,8 +77,7 @@ import { MaterialModuleModule } from '../share/material/material.module';
     LichchieuComponent,
     ThongtinphimComponent,
     TrangdatveComponent,
-    DanhsachgheComponent,
-    GheComponent,
+    GheComponent, DangkydangnhapComponent, HttpClientModule
   ]
 })
 export class HomeModule { }

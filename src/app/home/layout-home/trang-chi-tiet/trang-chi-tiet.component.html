@@ -1,22 +1,23 @@
-<div class="modal" id="trailer">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      
-
-      <!-- Modal body --> 
-          <iframe  src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
-          <button type="button" class="close" style="color:white" data-dismiss="modal"><img src="https://123phim.vn/app/assets/img/icons/close.png" alt=""></button>
-      <!-- Modal footer -->
+ 
+ <div class="modal" id="trailer">
+    <div class="modal-dialog">
+      <div class="modal-content">
   
+        <!-- Modal Header -->
+        
+  
+        <!-- Modal body --> 
+            <iframe  [src]="trailer| safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+            <button type="button" class="close" style="color:white" data-dismiss="modal"><img src="https://123phim.vn/app/assets/img/icons/close.png" alt=""></button>
+        <!-- Modal footer -->
+    
+      </div>
     </div>
   </div>
-</div>
-<section class="info1">
+<section class="info1 ">
    <div class="background_img">
-     <img src="https://s3img.vcdn.vn/123phim/2019/04/avengers-endgame-15561665051068.jpg" alt="">
+     <img src="{{phim.HinhAnh}}" alt="">
      <div class="btnPlay"  data-toggle="modal" data-target="#trailer">
         <img src="https://123phim.vn/app/assets/img/icons/play-video.png" alt="">
       </div>
@@ -24,29 +25,29 @@
    <div class="styleGradient">
      
   </div>
-  <div class="chitietphim row">
+  <div class="chitietphim  row">
 
      <div class="phim_img">
-        <img src="https://s3img.vcdn.vn/mobile/123phim/2019/04/avengers-endgame-15561658064595_220x310.jpg" alt="">
+        <img src="{{phim.HinhAnh}}" alt="">
         <div class="btnPlay" data-toggle="modal" data-target="#trailer">
           <img src="https://www.123phim.vn/app/assets/img/icons/play-video.png" alt="">
         </div>
 
      </div>
-     <div class="detail1">
-       <p class="day">26.4.2019</p>
+     <div class="detail1 ">
+       <p class="day">{{phim.NgayKhoiChieu | date:'dd/MM/yyyy'}}</p>
        <p class="name">
-         <span>C13</span>Avengers: Hồi Kết - Avengers: Endgame
+         <span>C13</span>{{phim.TenPhim}}
        </p>
        <p class="time">183 phút - 9.1 IMDb - 2D/Digital/3D/IMAX/4DX</p>
-       <a routerLink="trangdatve">
-          <button class="btnMuave btn">Mua vé</button></a>
+     
+          <button class="btnMuave " mat-button>Mua vé</button> 
      </div>
  
         <div class="rate" >
        
  
-            <span>10</span>
+            <span>{{phim.DanhGia}}</span>
             <div class="slice">
               <div class="bar"></div> 
             </div>
@@ -105,11 +106,19 @@
               </div>
               <div class="lichchieu col-md-8">
                  <div class="wrap">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
-                          <a class="nav-link active" data-toggle="pill" href="#lichchieu">thứ 2 <p>29</p></a>
+                    <ul class="nav nav-pills" >
+                       
+                        <li class="nav-item" *ngFor="let lichchieu of phim.LichChieu;let i=index" >
+                          <a class="nav-link " [ngClass]="{active:i==0}" data-toggle="pill" href="#lichchieu{{i+1}}">
+                            <div *ngIf="i==6 else ngaythuong">
+                              CN
+                            </div>
+                            <ng-template #ngaythuong>
+                                thứ {{i+2}}
+                            </ng-template>
+                            <p>{{lichchieu.NgayChieuGioChieu | date:'dd'}}</p></a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                           <a class="nav-link" data-toggle="pill" href="#lichchieu2">thứ 3 <p>30</p></a>
                         </li>
                         <li class="nav-item">
@@ -126,129 +135,22 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#lichchieu6">CN<p>4</p></a>
-                          </li>
+                          </li> -->
                       </ul>
                       
                  </div>
                     <!-- Tab panes -->
                     <div class="tab-content giochieu">
-                      <div class="tab-pane container active" id="lichchieu">
+                   
+                          <div *ngFor="let lichchieu of phim.LichChieu;let i=index" class="tab-pane container " [ngClass]="{active:i==0}" id="lichchieu{{i+1}}" >
                         
-                          <a href="#"><span>1:00</span></a>
-                          
-                          <a href="#"><span>2:00</span></a>
-                          
-                          <a href="#"><span>3:00</span></a>
-                          
-                          <a href="#"><span>4:00</span></a>
-                          
-                          <a href="#"><span>5:00</span></a>
-                          <a href="#"><span>6:00</span></a>
-                          
-                          <a href="#"><span>7:00</span></a>
-                          
-                          <a href="#"><span>8:00</span></a>
-                          
-                          <a href="#"><span>9:00</span></a>
-                          
-                          <a href="#"><span>10:00</span></a>
-
-                      </div>
-                      <div class="tab-pane container fade" id="lichchieu2">
-                          <a href="#"><span>1:00</span></a>
-                          
-                          <a href="#"><span>2:00</span></a>
-                          
-                          <a href="#"><span>3:00</span></a>
-                          
-                          <a href="#"><span>4:00</span></a>
-                          
-                          <a href="#"><span>5:00</span></a> <a href="#"><span>6:00</span></a>
-                          
-                          <a href="#"><span>7:00</span></a>
-                          
-                          <a href="#"><span>8:00</span></a>
-                          
-                          <a href="#"><span>9:00</span></a>
-                          
-                          <a href="#"><span>10:00</span></a>
-                      </div>
-                      <div class="tab-pane container fade" id="lichchieu3">
-                          <a href="#"><span>1:00</span></a>
-                          
-                          <a href="#"><span>2:00</span></a>
-                          
-                          <a href="#"><span>3:00</span></a>
-                          
-                          <a href="#"><span>4:00</span></a>
-                          
-                          <a href="#"><span>5:00</span></a> <a href="#"><span>6:00</span></a>
-                          
-                          <a href="#"><span>7:00</span></a>
-                          
-                          <a href="#"><span>8:00</span></a>
-                          
-                          <a href="#"><span>9:00</span></a>
-                          
-                          <a href="#"><span>10:00</span></a>
-                      </div>
-                        <div class="tab-pane container fade" id="lichchieu4">
-                            <a href="#"><span>1:00</span></a>
-                          
-                            <a href="#"><span>2:00</span></a>
-                            
-                            <a href="#"><span>3:00</span></a>
-                            
-                            <a href="#"><span>4:00</span></a>
-                            
-                            <a href="#"><span>5:00</span></a> <a href="#"><span>6:00</span></a>
-                          
-                            <a href="#"><span>7:00</span></a>
-                            
-                            <a href="#"><span>8:00</span></a>
-                            
-                            <a href="#"><span>9:00</span></a>
-                            
-                            <a href="#"><span>10:00</span></a>
-                        </div>
-                          <div class="tab-pane container fade" id="lichchieu5">
-                              <a href="#"><span>1:00</span></a>
-                          
-                              <a href="#"><span>2:00</span></a>
-                              
-                              <a href="#"><span>3:00</span></a>
-                              
-                              <a href="#"><span>4:00</span></a>
-                              
-                              <a href="#"><span>5:00</span></a> <a href="#"><span>6:00</span></a>
-                          
-                              <a href="#"><span>7:00</span></a>
-                              
-                              <a href="#"><span>8:00</span></a>
-                              
-                              <a href="#"><span>9:00</span></a>
-                              
-                              <a href="#"><span>10:00</span></a>
+                              <a  routerLink="/home/trangdatve/{{lichchieu.MaLichChieu}}/{{phim.MaPhim}}"><span>{{lichchieu.NgayChieuGioChieu | date:'hh:mm'}}</span></a>
+                                
+    
                           </div>
-                            <div class="tab-pane container fade" id="lichchieu6">
-                                <a href="#"><span>1:00</span></a>
+                  
                           
-                                <a href="#"><span>2:00</span></a>
-                                
-                                <a href="#"><span>3:00</span></a>
-                                
-                                <a href="#"><span>4:00</span></a>
-                                
-                                <a href="#"><span>5:00</span></a> <a href="#"><span>6:00</span></a>
-                          
-                                <a href="#"><span>7:00</span></a>
-                                
-                                <a href="#"><span>8:00</span></a>
-                                
-                                <a href="#"><span>9:00</span></a>
-                                
-                                <a href="#"><span>10:00</span></a>
-                            </div>
+                            
                     </div>
               </div> </div>
             <div id="menu1" class="container tab-pane fade thongtinchitietphim "><br>
@@ -309,12 +211,11 @@
                   Nội dung
                 </p>
                 <p>
-                  Sau cú búng tay hủy diệt nửa vũ trụ của Thanos, những siêu anh hùng sống sót trong cuộc chiến vẫn chưa từ bỏ hy vọng. Cùng với sự trở lại của Ant-Man, Hawkeye và sự xuất hiện của vị cứu tinh Captain Marvel, biệt đội Avengers sẽ thực hiện một kế hoạch bí ẩn để đảo ngược sự kiện, trả lại trật tự cho vũ trụ. Hồi kết của Cuộc chiến Vô cực là “siêu bom tấn” được mong đợi nhất năm sau, hứa hẹn viết nên cột mốc mới cho phòng vé thế giới.
-                </p>
+                  {{phim.MoTa}}   </p>
               </div>
               <div class="trailer">
                 <p>Trailer & Hình Ảnh</p>
-                <img src="https://s3img.vcdn.vn/123phim/2019/04/avengers-endgame-15560131804357.jpg" alt="">
+                <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" style="max-height: 400px" alt="">
                 <div class="btnPlay"  data-toggle="modal" data-target="#trailer">
                   <img src="https://www.123phim.vn/app/assets/img/icons/play-video.png" alt="">
                 </div>
@@ -401,7 +302,7 @@
             </div>
           </div>  
   </div>
-   
+  
 </section>
 
  

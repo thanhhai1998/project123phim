@@ -3,6 +3,7 @@
   position: relative;
   .background_img {
     // width: calc(100% + 5px);
+    max-height: 635px;
     img {
       filter: blur(15px);
       -webkit-filter: blur(15px);
@@ -98,8 +99,7 @@
         font-size: 16px;
         border-radius: 4px;
         text-align: center;
-        background: 0 0;
-        padding: 7px 25px;
+        background: 0 0; 
         transition: all 0.2s;
         margin-top: 25px;
         margin-bottom: 20px;
@@ -531,13 +531,12 @@
 .modal{
   .modal-dialog{
     margin-top: 100px;
-    max-width: 800px;
+    max-width: 900px;
     .modal-content{
       iframe{
-        height: 400px;
-        max-height: 400px;
-        position: relative;
-        border: 1px solid white;
+        height: 500px;
+        max-height: 500px;
+        position: relative; 
         border-radius: 35px      ;
         -webkit-border-radius: 35px      ;
         -moz-border-radius: 35px      ;
